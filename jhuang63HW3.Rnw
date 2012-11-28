@@ -472,6 +472,23 @@ computed values using \verb+\Sexpr+
 \label{fig:examplefrommanual}
 \end{figure}
 
+\newpage
+\noindent{\bf Solution for Ex 4.1:}
+
+\begin{figure}[h!]
+    \centering
+\begin{tikzpicture}
+\foreach \x in {1,2,...,10}
+\foreach \y in {1}
+{
+\draw (\x,\y) +(-.5,-.5) rectangle ++(.5,.5);
+\draw (\x,\y) node{\footnotesize $(\x,\y)$};
+}
+\end{tikzpicture}
+\caption{First ten objects on a "line"}
+\label{fig:tenobjects}
+\end{figure}
+
 
 \paragraph{Ex 4.2}
 \begin{itemize}
