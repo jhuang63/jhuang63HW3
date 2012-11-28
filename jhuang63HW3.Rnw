@@ -253,9 +253,9 @@ Dis=sqrt(D)
 \item Without Built-in dist function:\\
 <<echo=TRUE,results=verbatim,fig=FALSE>>=\\
 M=A%*%t(A)\\
-x=cbind(diag(M))\\
-one=cbind(x(1,1,1,1))\\
-D=x%*%t(one)+one%*%t(x)-2*M\\
+c=cbind(diag(M))\\
+one=cbind(c(1,1,1,1))\\
+D=c%*%t(one)+one%*%t(c)-2*M\\
 Dis=sqrt(D)\\
 @
 
@@ -489,6 +489,64 @@ computed values using \verb+\Sexpr+
 \label{fig:tenobjects}
 \end{figure}
 
+\begin{lstlisting}[caption=R codes for Ex 4.1, label={code:dissimilarity}]
+
+M=matrix(rep(1,51*51),nrow=51,byrow=TRUE)
+for (i in 1:51){
+  for (j in 1:51){
+    if(i==j) S[i,j]=9
+    else if(abs(i-j)>=22 & abs(i-j)<=24) M[i,j]=1
+    else if(abs(i-j)>=19 & abs(i-j)<=21) M[i,j]=2
+    else if(abs(i-j)>=16 & abs(i-j)<=18) M[i,j]=3
+    else if(abs(i-j)>=13 & abs(i-j)<=15) M[i,j]=4
+    else if(abs(i-j)>=10 & abs(i-j)<=12) M[i,j]=5
+    else if(abs(i-j)>=7 & abs(i-j)<=9) M[i,j]=6
+    else if(abs(i-j)>=4 & abs(i-j)<=6) M[i,j]=7
+    else if(abs(i-j)>=1 & abs(i-j)<=3) M[i,j]=8
+    
+    else M[i,j]=0
+  }
+}
+
+D=matrix(rep(1,51*51),nrow=51,byrow=TRUE)
+for (i in 1:51){
+  for (j in 1:51){
+    D[i,j]=sqrt(M[i,i]+M[j,j]-2*M[i,j])
+  }
+}
+
+X_cmd=cmdscale(D)
+plot(X_cmd,col=heat.colors(51),pch=5)
+\end{lstlisting}
+
+<<echo=FALSE,results=hide,fig=TRUE>>=
+
+M=matrix(rep(1,51*51),nrow=51,byrow=TRUE)
+for (i in 1:51){
+  for (j in 1:51){
+    if(i==j) S[i,j]=9
+    else if(abs(i-j)>=22 & abs(i-j)<=24) M[i,j]=1
+    else if(abs(i-j)>=19 & abs(i-j)<=21) M[i,j]=2
+    else if(abs(i-j)>=16 & abs(i-j)<=18) M[i,j]=3
+    else if(abs(i-j)>=13 & abs(i-j)<=15) M[i,j]=4
+    else if(abs(i-j)>=10 & abs(i-j)<=12) M[i,j]=5
+    else if(abs(i-j)>=7 & abs(i-j)<=9) M[i,j]=6
+    else if(abs(i-j)>=4 & abs(i-j)<=6) M[i,j]=7
+    else if(abs(i-j)>=1 & abs(i-j)<=3) M[i,j]=8
+    
+    else M[i,j]=0
+  }
+}
+
+D=matrix(rep(1,51*51),nrow=51,byrow=TRUE)
+for (i in 1:51){
+  for (j in 1:51){
+    D[i,j]=sqrt(M[i,i]+M[j,j]-2*M[i,j])
+  }
+}
+X_cmd=cmdscale(D)
+plot(X_cmd,col=heat.colors(51),pch=5)
+@
 
 \paragraph{Ex 4.2}
 \begin{itemize}
