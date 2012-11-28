@@ -548,6 +548,10 @@ X_cmd=cmdscale(D)
 plot(X_cmd,col=heat.colors(51),pch=5)
 @
 
+\begin{itemize}
+\item Red points stand for small coordinates, yellow points stand for large coordinates. And the distances between each pair of points reflect the dissimilarity between the objects. Based on the picture, it is obvious that the adjacent points are close to each other and thus have similar coordinates.
+\end{itemize}
+
 \paragraph{Ex 4.2}
 \begin{itemize}
 \item \verb+[COMMIT]+ list your R code using \verb+lstlisting+
