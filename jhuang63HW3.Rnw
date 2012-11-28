@@ -567,6 +567,17 @@ plot(X_cmd,col=heat.colors(51),pch=5)
 \item \verb+[COMMIT]+ allocate at least a quarter page of \emph{text} explaining the result
 \end{itemize}
 
+\noindent {\bf Solution for Ex 4.3:}\\
+\begin{lstlisting}[caption=R codes for Flowers Comparison, label={code:gardenflowers}]
+require(MVA)
+data(gardenflowers)
+flowers_m=cmdscale(gardenflowers,k=17,eig=TRUE)
+x=flowers_m$points[,1]
+y=flowers_m$points[,2]
+plot(x,y,xlab = "First column of input", ylab = "Second column of input",xlim = range(x)*1.5, type = "n")
+text(x, y, labels = colnames(as.matrix(gardenflowers)), cex = 0.5)
+\end{lstlisting}
+
 \bibliographystyle{plain}
 \nocite{*}
 \bibliography{biblio}
