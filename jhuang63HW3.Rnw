@@ -209,6 +209,9 @@ For $B$, the rank is $\Sexpr{rankB}$, so we can use the first row of it to find 
 
 \end{itemize}
 
+
+
+
 \paragraph{Ex 7.24}
 \begin{itemize}
     \item \verb+[COMMIT]+ use \verb+lstlisting+ to list your R code
@@ -229,6 +232,17 @@ Your R codes go here
     \item \verb+[COMMIT]+ make sure to explain your computation, e.g., compare the two
         computations
 \end{itemize}
+
+\newpage
+\noindent{\bf Solution for Ex 7.24}\\
+\begin{lstlisting}[caption=R codes for Ex 7.24, label=code:distance]
+M=A%*%t(A)
+x=cbind(diag(M))
+one=cbind(x(1,1,1,1))
+D=x%*%t(one)+one%*%t(x)-2*M
+D=sqrt(D)
+\end{lstlisting}
+
 \paragraph{Ex 7.30}
 Omit (c), (d) and (e).
 The necessary data is saved in \verb+matlabclown.RData+
