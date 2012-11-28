@@ -416,6 +416,11 @@ image(M,col=gray.colors(k))
     \label{fig:matlabclownK150}
 \end{figure}
 
+\item[(b)]
+<<echo=FALSE,results=hide>>=
+s=diag(S)
+rate=cumsum(s)/sum(s)
+@
 
 \vskip0.25in
 \begin{center}
