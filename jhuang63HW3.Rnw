@@ -240,8 +240,17 @@ M=A%*%t(A)
 x=cbind(diag(M))
 one=cbind(x(1,1,1,1))
 D=x%*%t(one)+one%*%t(x)-2*M
-D=sqrt(D)
+Dis=sqrt(D)
 \end{lstlisting}
+
+\begin{itemize}
+\item Without Built-in dist function:\\
+<<echo=TRUE,results=verbatim,fig=FALSE>>=\\
+M=A%*%t(A)
+x=cbind(diag(M))
+one=cbind(x(1,1,1,1))
+D=x%*%t(one)+one%*%t(x)-2*M
+Dis=sqrt(D)
 
 \paragraph{Ex 7.30}
 Omit (c), (d) and (e).
