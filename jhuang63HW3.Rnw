@@ -578,6 +578,18 @@ plot(x,y,xlab = "First column of input", ylab = "Second column of input",xlim = 
 text(x, y, labels = colnames(as.matrix(gardenflowers)), cex = 0.5)
 \end{lstlisting}
 
+<<echo=FALSE,results=hide,fig=TRUE>>=
+require(MVA)
+data(gardenflowers)
+flowers_mds <- cmdscale(gardenflowers,k=17,eig=TRUE)
+x<-flowers_mds$points[,1]
+y<-flowers_mds$points[,2]
+plot(x,y,xlab = "Column 1", ylab = "Column 2",xlim = range(x)*1.5, type = "n")
+text(x, y, labels = colnames(as.matrix(gardenflowers)), cex = 0.5)
+@
+
+\newline I cannot find the data for gardenflowers and MVA.
+
 \bibliographystyle{plain}
 \nocite{*}
 \bibliography{biblio}
