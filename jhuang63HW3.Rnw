@@ -268,6 +268,10 @@ $$D=
 
 \end{itemize}
 
+If there are no built-in dist functions can be used, then we shall use the formula in the book to derive a matrix $M=AA'$,then calculate the distance matrix from the diagonal entries of $X$, matrix $X$ as well as a one vector.\\
+
+If there are built-in dist funtions can be used, we just need to use the built-in R DIST function to do the calculation directly.\\
+
 \paragraph{Ex 7.30}
 Omit (c), (d) and (e).
 The necessary data is saved in \verb+matlabclown.RData+
