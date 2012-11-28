@@ -180,14 +180,33 @@ points(xydataA,cex=1,pch=5,col='blue')
 
 \begin{itemize}
 \item[(b)]
-<<echo=false,result=verbatim,fig=false>>=
-A.qr=qr(A)
-rankA=A.qr$rank
-B.qr=qr(B)
-rankB=B.qr$rank
-@
-\noindent The rank of $A$ is \Sexpr{rankA} which equals 2 and the rank of $B$ is \Sexpr{rankB} which equals 1.\\
+$<<echo=false,result=verbatim,fig=false>>=$\\
+A.qr=qr(A)\\
+rankA=A.qr$rank\\
+B.qr=qr(B)\\
+rankB=B.qr$rank\\
+
+\noindent The rank of $A$ is \Sexpr{det(A)} and the rank of $B$ is \Sexpr{det(B)}.\\
 Generating the second and third colunms of $A$ from the first column will change the determinant of this matrix. So, it does not work.\\
+\end{itemize}
+
+\begin{itemize}
+  \item[(c)]
+$<<echo=TRUE,results=verbatim,fig=FALSE>>=$\\
+a=cbind(A[1:2,3])\\
+A12=A[1:2,1:2]\\
+d.A12=det(A12)\\
+x=solve(A12,a)\\
+
+Here is how the linear combination could create the third column from the first two:\\
+For $A$:
+$$c3=\Sexpr{x[1,1]}*c1+\Sexpr{x[2,1]}*c2.$$
+For $B$:
+$$c3=x*c1+y*c2$$ for all $x$ and $y$ that satisfy $\Sexpr{B[1,1]}*x+\Sexpr{B[1,2]}*y=\Sexpr{B[1,3]}$.\\
+The rank of $A$ is $\Sexpr{rankA}$, the determinant of submatrix $A_{12}$, which is $\det(A_{12})= \Sexpr{detA12} \neq 0$, so, this matrix can be used with corresponding coordinates in the third column to derive the linear combination.\\
+
+For $B$, the rank is $\Sexpr{rankB}$, so we can use the first row of it to find the linear combination. The coefficient for the 1st column $x$ and the 2nd column $y$ can be any numbers that satisfy following demand:$$\Sexpr{B[1,1]}*x+\Sexpr{B[1,2]}*y=\Sexpr{B[1,3]}$$$\\
+
 \end{itemize}
 
 \paragraph{Ex 7.24}

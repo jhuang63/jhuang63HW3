@@ -122,3 +122,23 @@ R CMD pdflatex yourfilename.tex
         \begin{itemize}
             \item Use
 \begin{lstlisting}
+
+Your R codes goes here
+\end{lstlisting}
+            \item Make sure to label the horizontal axis, the vertical axis
+                and give the main title, and give different color for $A$ and
+                $B$ e.g., by filling out the space
+                between the quotation marks, and choose a different symbol for
+                $A$ and $B$ by specifying a number for \verb+cex+ and
+                \verb+pch+
+\begin{lstlisting}
+plot(xydataA,xlab='',ylab='',main='',color='',cex=,pch=)
+points(xydataB,cex=,pch=,cex=,color='')
+\end{lstlisting}
+            \item \verb+[COMMIT]+ Include your R codes using \verb+lstlisting+ making sure that it has an appropriate caption
+        \end{itemize}
+    \item[(b)] \verb+[COMMIT]+ Supplement your calculation using R/Sweave
+        \begin{itemize}
+            \item computations need to be done before using them in the text
+                using \verb++ or concurrently
+\begin{lstlisting}
