@@ -178,6 +178,18 @@ points(xydataA,cex=1,pch=5,col='blue')
 
 \end{lstlisting}
 
+\begin{itemize}
+\item[(b)]
+<<echo=false,result=verbatim,fig=false>>=
+A.qr=qr(A)
+rankA=A.qr$rank
+B.qr=qr(B)
+rankB=B.qr$rank
+@
+\noindent The rank of $A$ is \Sexpr{rankA} which equals 2 and the rank of $B$ is \Sexpr{rankB} which equals 1.\\
+Generating the second and third colunms of $A$ from the first column will change the determinant of this matrix. So, it does not work.\\
+\end{itemize}
+
 \paragraph{Ex 7.24}
 \begin{itemize}
     \item \verb+[COMMIT]+ use \verb+lstlisting+ to list your R code
