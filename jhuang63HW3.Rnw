@@ -422,6 +422,10 @@ s=diag(S)
 rate=cumsum(s)/sum(s)
 @
 
+\item[(c)]
+Based on the four figures we have now, it is obvious that clown pictures become clearer as the value of K increasing from small to big. And the corresponding rate are \Sexpr{rate[tinyK]},\Sexpr{rate[smallK]},\Sexpr{rate[mediumK]},\Sexpr{rate[largeK]} respectively.
+\end{itemize}
+
 \vskip0.25in
 \begin{center}
 \textbf{Problems from Chapter 4: Multidimensional Scaling}
